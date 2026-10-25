@@ -1,0 +1,28 @@
+﻿Source section / requirement,Required item,Evidence in release,Status,Residual note
+1 Problem statement,Conceptual elbow actuator integrated in simplified arm,"STEP assembly, concept drawing, report",Complete at concept scope,Not manufacturing-ready; physical prototype expressly not required.
+2 Design inputs,Payload 1 kg / forearm-hand 1.5 kg / offsets 350 mm & 180 mm / 45 rpm / BLDC-PMSM / planetary preferred / encoder / equivalent CAD,"Calculations.csv, Component_Research.csv, CAD and report",Complete with assumptions identified,"Dynamic profile, accuracy, duty cycle, link mass and power-loss hold not specified."
+3A Basic sizing,Static torque; preliminary target and margin; motor speed/reduction; commercial motor+gearhead references,"Calculations.csv, Efficiency_Sensitivity.csv, report refs",Complete as preliminary calculation,2x is assumption; vendor operating point/orderable stack remains conditional.
+3B Mechanical concept/CAD,"Motor, gearbox, output shaft, bearing support, housing, forearm attachment",STEP + builder source + FreeCAD macro,Complete as conceptual neutral CAD,Exact vendor solids/clearance/tolerances are not represented; native FCStd not created in this runtime.
+3B Simplified arm,"Upper arm, forearm, wrist or payload interface",STEP and artwork,Complete concept envelope,Link lengths are illustrative; masses/COM are not inferred from CAD.
+3B Load path / assembly access,Plausible load path and maintenance consideration,Assembly drawing + report + gap plan,Conceptual service sequence described; implementation not verified,"Detail bearing retention, removable-cap retention, cable routing, fastener/tool reach, service sequence and collision review in detailed CAD. Current envelope model does not prove these."
+3B Drawing,Assembly drawing or clearly labelled CAD view,K_EL01_Concept_Drawing.pdf/.svg/.png,Complete,"Concept artwork, not dimensioned manufacturing drawing."
+3C Design note,Assumptions and design decisions,Main report and QA review,Complete,Design assumptions explicitly labelled.
+3C BOM,"Main components, quantities and model where known",BOM.csv and workbook,Complete at concept level,Custom fasteners/materials and configured hub/drive order codes remain TBD.
+3C Risk,Two important risks and mitigations,"Report, Risk_Register.csv, QA review",Complete; expanded beyond two,"Risk mitigations are plans, not completed validation."
+4 Q1,Torque adequate but output speed low,Main report and talk track,Answered,"Check loaded motor curve, drive limit, ratio trade-off."
+4 Q2,Static pass but repeated movement overheats,Main report and test plan,Answered,Require duty cycle and thermals before closing.
+4 Q3,Gearbox torque rating vs bending load,"Main report, load path, calculations",Answered,Support bearings route radial load; residual gearhead load and alignment need checks.
+4 Q4,Two additional requirements to clarify,Main report and supplier/project question list,Answered,Duty/motion profile and accuracy/backlash/holding requirements prioritized.
+4 Q5,Cost vs backlash,Main report and artwork,Answered,1 degree average no-load figure implies about 6.1 mm arc at 350 mm; system error differs.
+4 Q6,Assumption that might be wrong and test,Main report and validation plan,Answered,2x static factor may not cover dynamics/impact; use inertia model and supervised test plan.
+5 Draft artwork,"Isometric view, enlarged actuator, labels, load path, dimensions, torque/speed callout, trade-off",Landscape artwork SVG/PDF/PNG,Complete,Not a production drawing.
+6 Package,Calculation sheet,Calculations.csv + workbook,Complete,Spreadsheet values include formula/units caveats.
+6 Package,Component selection with official references,Component_Research.csv + report,Complete as candidate selection,Exact configured system remains open.
+6 Package,CAD files,STEP + CadQuery builder + FreeCAD macro,Complete via neutral CAD / source,Native FreeCAD file must be saved/tested by running macro in FreeCAD if desired.
+6 Package,Drawing,Concept drawing PDF/SVG/PNG,Complete,Assembly concept view.
+6 Package,Draft artwork,Concept drawing PDF/SVG/PNG,Complete,Same page serves as labeled assembly and concept artwork.
+6 Package,BOM,BOM.csv + workbook,Complete,No purchasing or manufacturing.
+6 Package,Short 3-5 page report,Kritva_K_EL01_Design_Report.pdf/.docx,Complete 3 pages within 3-5 page range,Final render inspected after revision.
+7 Scope constraints,No physical prototype/purchases; no manufacturing-ready claim; assumptions separate,"README, report, gate register",Compliant,No prototype or purchases performed.
+8 Final review,10-minute presentation + 10-minute technical discussion,Presentation.pptx/.pdf + speaker script/Q&A,Now supplied,Practice timing and tailor to interviewer.
+9 Evaluation criteria,"Evidence across calculations, component selection, CAD, critical thinking, artwork, organization",Release set + traceability + QA review,Coverage mapped,Technical validation remains at concept level.

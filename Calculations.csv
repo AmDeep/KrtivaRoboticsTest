@@ -1,0 +1,35 @@
+﻿Parameter,Formula / basis,Value,Units,Classification / caveat
+Payload gravity torque,T = m g r = 1.0 x 9.81 x 0.350,3.4335,N m,Directly calculated from assignment inputs
+Forearm/hand gravity torque,T = m g r = 1.5 x 9.81 x 0.180,2.6487,N m,Directly calculated from assignment inputs
+Static gravity torque,Tpayload + Tforearm,6.0822,N m,"Horizontal forearm, gravity only"
+Preliminary output torque target,2 x T_static,12.1644,N m,Assumed 2x multiplier; not a certified safety factor
+Output angular velocity,45 x 2 pi / 60,4.71238898038469,rad/s,Calculated from required output speed
+Output mechanical power at target,T_target x omega,57.323384512991524,W,"Ideal output mechanical power, before losses"
+Gear ratio,Candidate GP 52 C,91.0,1:1 ratio value,Commercial candidate; configured combination still to confirm
+Required nominal motor speed,45 RPM x 91,4095.0,RPM,Kinematic requirement before loaded-speed/thermal validation
+Motor nominal speed,Manufacturer listing,4470,RPM,Candidate motor part 579165
+Motor speed headroom to nominal,4470 - 4095,375.0,RPM,Only 8.39% nominal speed headroom
+Motor nominal continuous torque,Manufacturer listing,0.423,N m,Candidate motor part 579165; exact operating curve must be checked
+Motor torque constant,Manufacturer listing,0.0919,N m/A,Simple current-derived screen only
+Continuous-current torque screen,Kt x 4.59 A,0.42182099999999995,N m,Not a complete motor/thermal model
+Torque/current ceiling,"min(0.423, 0.0919 x 4.59)",0.42182099999999995,N m,Simplified capacity ceiling for sensitivity study
+Transverse gravity force,(1.0 + 1.5) x 9.81,24.525000000000002,N,"Excludes link masses not specified by the brief, dynamics and impacts"
+Bearing A centre coordinate,Bearing A y=6..16 mm; centre=(6+16)/2,11.0,mm,From STEP concept envelope
+Bearing B centre coordinate,Bearing B y=56..66 mm; centre=(56+66)/2,61.0,mm,From STEP concept envelope
+Bearing centre spacing,61 - 11,50.0,mm,CAD assumption; both bearing widths are 10 mm
+Forearm load plane coordinate,Centreline of forearm link (y=87..135 mm),111.0,mm,From STEP envelope; bridge bracket is concept geometry
+Load plane axial overhang,111 - 61,50.0,mm,From rear bearing B centre to forearm link centre plane
+Bending moment at support screen,M = F x e; (24.525 N x 50 mm) / 1000,1.22625,N m,Static radial load screen only
+Front/outboard bearing reaction,F x (1 + e/L),49.050000000000004,N,Idealized two-support overhung-load model
+Rear/inboard bearing reaction magnitude,F x e/L,24.525,N,Opposite direction to front reaction in idealized beam model
+Nominal shaft bending stress,sigma = 32 x (M_Nm x 1000)/(pi x d_mm^3),7.228286998756913,MPa,M converted from N m to N mm explicitly; smooth solid shaft screen
+Nominal shaft torsional shear,tau = 16 x (T_Nm x 1000)/(pi x d_mm^3),35.85230351383429,MPa,T converted from N m to N mm explicitly; excludes keyway concentrations
+Combined nominal von Mises stress,sqrt(sigma_b^2 + 3 tau^2),62.517286686809136,MPa,Static nominal calculation only; not fatigue or design sign-off
+17-4PH candidate yield basis,Supplier published ~110 ksi converted to MPa,758.0,MPa,Material/heat treatment/certificate not frozen
+Nominal yield-to-stress quotient,758 MPa / combined nominal von Mises,12.124646480537912,ratio,"Not a design factor; ignores notch, fit, fatigue, shock and uncertainties"
+Tangential key force,2 T_target / d_shaft,2027.4,N,"12 mm shaft, full target torque"
+Nominal key shear stress,Ft / (b x L) = Ft/(4 x 20),25.3425,MPa,Key/hub materials and engagement require confirmation
+Nominal key bearing stress,Ft / ((h/2) x L) = Ft/(2 x 20),50.685,MPa,Assumes 2 mm effective engagement height
+Gearbox-backlash endpoint arc,0.350 m x (1 deg x pi/180),6.1086523819801535,mm,"Approximate arc at payload COM radius; average no-load value, not full joint error"
+Bearing static-rating ratio,3100 N / front reaction,63.20081549439347,ratio,Gross comparison only; not full bearing life assessment
+Bearing dynamic-rating ratio,7280 N / front reaction,148.41997961264016,ratio,Gross comparison only; no L10 life claimed

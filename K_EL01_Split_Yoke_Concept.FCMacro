@@ -1,0 +1,75 @@
+# K-EL/01 Split-Yoke actuator - editable concept model
+# All dimensions in mm; geometry is concept envelope, not production geometry.
+# Run in FreeCAD GUI: Macro -> Macros... -> select file -> Execute.
+# On execution it creates and attempts to save K_EL01_Split_Yoke_Concept.FCStd.
+import FreeCAD as App
+import Part
+from FreeCAD import Vector
+import os, math
+DOC_NAME = "K_EL01_Split_Yoke_Concept"
+try: App.closeDocument(DOC_NAME)
+except Exception: pass
+doc = App.newDocument(DOC_NAME)
+# Assignment-derived inputs and explicit geometry assumptions
+UPPER_ARM_LENGTH = 300.0       # assumed link length, not specified by assignment
+FOREARM_LENGTH = 350.0         # illustrative link length; payload COM specified at 350 mm
+SHAFT_D = 12.0                 # assumed; chosen to match candidate 6201 bearing bore
+BEARING_OD = 32.0              # SKF 6201-2RSH catalog envelope
+BEARING_W = 10.0
+BEARING_SPACING = 50.0          # center-to-center assumption
+BEARING_A_BASE = 6.0
+BEARING_B_BASE = BEARING_A_BASE + BEARING_SPACING
+HOUSING_X = 90.0; HOUSING_Y = 82.0; HOUSING_Z = 90.0
+MOTOR_D = 52.0; MOTOR_L = 80.0 # maxon EC-i 52 catalog envelope
+GEAR_D = 52.0; GEAR_L = 78.5   # maxon GP 52 C catalog envelope
+GEAR_RATIO = 91.0
+# colors
+C_METAL=(0.72,0.77,0.81); C_DARK=(0.20,0.29,0.36); C_BLUE=(0.08,0.48,0.62)
+C_TEAL=(0.18,0.68,0.72); C_ORANGE=(0.88,0.48,0.12); C_LIGHT=(0.87,0.91,0.94); C_BEARING=(0.55,0.63,0.69)
+root=doc.addObject("App::DocumentObjectGroup","K_EL01_Assembly"); root.Label="K-EL/01 Split-Yoke Assembly (concept)"
+def feature(name,label,shape,color,group=root):
+    o=doc.addObject("Part::Feature",name); o.Label=label; o.Shape=shape
+    o.ViewObject.ShapeColor=color; o.ViewObject.LineColor=(0.12,0.20,0.26); o.ViewObject.DisplayMode="Flat Lines"
+    group.addObject(o); return o
+def box(name,label,lx,ly,lz,base,color): return feature(name,label,Part.makeBox(lx,ly,lz,Vector(*base)),color)
+def cy(name,label,r,l,y,color,x=0,z=0): return feature(name,label,Part.makeCylinder(r,l,Vector(x,y,z),Vector(0,1,0)),color)
+def tube(name,label,ro,ri,l,y,color,x=0,z=0):
+    outer=Part.makeCylinder(ro,l,Vector(x,y,z),Vector(0,1,0)); inner=Part.makeCylinder(ri,l+2,Vector(x,y-1,z),Vector(0,1,0))
+    return feature(name,label,outer.cut(inner),color)
+box("UpperArmLink","Upper-arm link - 300 mm illustrative",58,48,UPPER_ARM_LENGTH,(-29,-24,-325),C_LIGHT)
+blank=Part.makeBox(HOUSING_X,HOUSING_Y,HOUSING_Z,Vector(-HOUSING_X/2,0,-HOUSING_Z/2))
+bore=Part.makeCylinder(BEARING_OD/2,HOUSING_Y+2,Vector(0,-1,0),Vector(0,1,0))
+feature("SplitYokeCarrier","Split-yoke bearing carrier (90 x 82 x 90 mm envelope)",blank.cut(bore),C_METAL)
+box("CarrierRemovableCap","Removable bearing-carrier cap",90,12,14,(-45,35,45),C_DARK)
+cy("ECi52Motor","BLDC motor envelope - maxon EC-i 52 579165",MOTOR_D/2,MOTOR_L,-198.5,C_DARK)
+cy("ENX16EASYEncoder","Motor-side encoder envelope - ENX 16 EASY 512 CPT candidate",16,12,-210.5,C_TEAL)
+cy("GP52CGearhead","Planetary gearhead envelope - maxon GP 52 C 223094, 91:1",GEAR_D/2,GEAR_L,-118.5,C_METAL)
+tube("FlexCoupling","KTR ROTEX GS size 19, 98 ShA spider envelope; hub fit TBD",19,6.25,40,-40,C_TEAL)
+cy("OutputSpindle","Independent output spindle - 12 mm assumed",SHAFT_D/2,175,-82,C_METAL)
+tube("BearingA","SKF 6201-2RSH sealed bearing A, 12 x 32 x 10 mm",16,6,BEARING_W,BEARING_A_BASE,C_BEARING)
+tube("BearingB","SKF 6201-2RSH sealed bearing B, 12 x 32 x 10 mm",16,6,BEARING_W,BEARING_B_BASE,C_BEARING)
+tube("OptionalOutputEncoderRing","Optional output encoder target ring - not selected",13.5,6.2,4,68,C_TEAL)
+box("OptionalOutputEncoderPCB","Optional output encoder sensor PCB envelope - not selected",6,12,18,(14,66,-9),C_ORANGE)
+tube("SpindleRetainerA","Spindle retainer envelope A - detailed groove TBD",8,6.05,2,17,C_DARK)
+tube("SpindleRetainerB","Spindle retainer envelope B - detailed groove TBD",8,6.05,2,67,C_DARK)
+cy("ForearmFlange","Forearm output flange - concept",34,10,82,C_TEAL)
+box("ForearmRootMountPlate","Forearm root mount plate - concept, fasteners TBD",100,8,62,(-35,92,-31),C_DARK)
+box("ForearmLink","Forearm link - 350 mm illustrative; mass/COM not inferred",350,48,52,(0,87,-26),C_LIGHT)
+box("WristInterface","Wrist / payload interface - concept",32,56,45,(325,83,-22.5),C_DARK)
+box("PayloadBlock","Payload envelope - 1.0 kg; COM center at 350 mm",45,45,45,(327.5,88.5,-22.5),C_BLUE)
+cy("PayloadCOMMarker","Payload COM marker at 350 mm from elbow",3.5,4.5,108.75,C_ORANGE,x=350)
+cy("ForearmCOMMarker","Forearm/hand COM marker at 180 mm from elbow",3.5,4.5,108.75,C_ORANGE,x=180)
+# key properties are text fields so the file carries design basis and limitations
+props=[("DesignName","K-EL/01 Split-Yoke"),("MotorCandidate","maxon EC-i 52 579165, 48 V"),("GearheadCandidate","maxon GP 52 C 223094, 91:1"),("EncoderCandidate","ENX16EASY06 catalog candidate, 512 CPT; exact configured stack TBD"),("ControllerCandidate","maxon EPOS4 Disk 60/8 CAN 688770"),("StaticTorque_Nm",6.0822),("TargetTorque_Nm",12.1644),("TargetSpeed_RPM",45.0),("GearRatio",91.0),("BearingSpacing_mm",BEARING_SPACING),("ShaftDiameter_mm",SHAFT_D),("ModelStatus","Concept envelope; not manufacturing-ready"),("Unresolved","Vendor gearhead output shaft interface, brake requirement, dynamic/thermal and mechanical validation")]
+for n,v in props:
+    root.addProperty("App::PropertyString" if isinstance(v,str) else "App::PropertyFloat",n,"Design Basis")
+    setattr(root,n,v)
+doc.recompute()
+try:
+    Gui.activeDocument().activeView().viewAxonometric(); Gui.activeDocument().activeView().fitAll()
+except Exception: pass
+try:
+    target=os.path.join(os.path.expanduser("~"),"K_EL01_Split_Yoke_Concept.FCStd")
+    doc.saveAs(target); print("Saved native editable FreeCAD document: "+target)
+except Exception as exc: print("Document created but auto-save failed; use File -> Save As: "+str(exc))
+print("Important: geometry uses simplified catalogue envelopes. No manufacturing-ready fits, shaft grooves, bearing life, fatigue, thermal, collision, or safety verification is implied.")

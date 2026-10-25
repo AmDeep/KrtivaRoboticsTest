@@ -1,0 +1,56 @@
+﻿filename,bytes,category,notes
+Assignment_Traceability.csv,4986,Engineering data,Included release file; see README.md and/or the file itself.
+BOM.csv,3788,Engineering data,Included release file; see README.md and/or the file itself.
+build_data.py,45785,CAD / artwork / source,Included release file; see README.md and/or the file itself.
+build_final_deliverables.py,51570,CAD / artwork / source,Included release file; see README.md and/or the file itself.
+Build_K_EL01_STEP.py,2887,CAD / artwork / source,Included release file; see README.md and/or the file itself.
+build_presentation_notes.py,14745,CAD / artwork / source,Included release file; see README.md and/or the file itself.
+build_workbook.py,14075,CAD / artwork / source,Included release file; see README.md and/or the file itself.
+Calculations.csv,4082,Engineering data,Included release file; see README.md and/or the file itself.
+CHANGELOG.md,2505,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+Component_Research.csv,4166,Engineering data,Included release file; see README.md and/or the file itself.
+DELIVERY_INDEX.csv,7142,Engineering data,"Index of final top-level release files, sizes and categories."
+Design_Verification_Register.csv,4071,Engineering data,Included release file; see README.md and/or the file itself.
+Efficiency_Sensitivity.csv,2587,Engineering data,Included release file; see README.md and/or the file itself.
+Engineering_Report.md,6054,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+Final_Audit_Summary.md,7283,Report / presentation / documentation,Requirement-by-requirement conclusion and remaining conditions.
+Final_Completion_and_Validation.md,3105,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+Gap_Closure_Plan.md,7457,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+Gap_Closure_Register.csv,5140,Engineering data,Included release file; see README.md and/or the file itself.
+K_EL01_Assembly_Drawing.pdf,41413,Report / presentation / documentation,Numbered actuator assembly concept; service access/retention remain verification gates.
+K_EL01_Assembly_Drawing.png,466678,CAD / artwork / source,Included release file; see README.md and/or the file itself.
+K_EL01_Assembly_Drawing.svg,10772,CAD / artwork / source,Included release file; see README.md and/or the file itself.
+K_EL01_Concept_Drawing.pdf,34347,Report / presentation / documentation,One-page concept artwork aligned to the brief callouts.
+K_EL01_Concept_Drawing.png,461656,CAD / artwork / source,Included release file; see README.md and/or the file itself.
+K_EL01_Concept_Drawing.svg,15270,CAD / artwork / source,Included release file; see README.md and/or the file itself.
+K_EL01_Engineering_Workbook.xlsx,37378,Engineering data,"Formula-driven engineering workbook with dashboard, inputs, calculations, sensitivity and registers."
+K_EL01_FreeCAD_Notebook_Starter.zip,54625,CAD / artwork / source,Standalone notebook/CAD starter ZIP; internal ZIP integrity checked.
+K_EL01_FreeCAD_Notebook_Starter_README.txt,1494,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+K_EL01_Run_and_View_FreeCAD_Macro.ipynb,19675,CAD / artwork / source,"Notebook to inspect macro, preview STEP, and invoke local FreeCAD where installed."
+K_EL01_Split_Yoke_Concept.FCMacro,6005,CAD / artwork / source,Optional FreeCAD macro; syntax-checked but not run in FreeCAD in authoring environment.
+K_EL01_Split_Yoke_Concept.step,245287,CAD / artwork / source,"Neutral CAD assembly; conceptual geometry, not manufacturing-ready."
+Kritva_K_EL01_10_Minute_Presenter_Notes.docx,40858,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+Kritva_K_EL01_10_Minute_Presenter_Notes.pdf,62097,Report / presentation / documentation,Timed presenter notes for the required 10-minute overview.
+Kritva_K_EL01_Comprehensive_Gap_Closure_Plan.docx,44340,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+Kritva_K_EL01_Comprehensive_Gap_Closure_Plan.pdf,119024,Report / presentation / documentation,Detailed plan for open gates and acceptance criteria.
+Kritva_K_EL01_Design_Report.docx,44380,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+Kritva_K_EL01_Design_Report.pdf,126512,Report / presentation / documentation,3-page design report within original brief expectation; concept-stage.
+Kritva_K_EL01_Final_Review_Presentation.pdf,770773,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+Kritva_K_EL01_Final_Review_Presentation.pptx,479421,Report / presentation / documentation,Editable 8-slide final-review deck.
+Kritva_K_EL01_Simulation_and_Verification_Plan.docx,41760,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+Kritva_K_EL01_Simulation_and_Verification_Plan.pdf,99567,Report / presentation / documentation,Proposed verification/test plan; no physical testing or FEA claimed.
+Kritva_K_EL01_Technical_Discussion_QA.docx,41416,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+Kritva_K_EL01_Technical_Discussion_QA.pdf,77251,Report / presentation / documentation,Technical discussion questions and answer preparation.
+Kritva_K_EL01_Technical_QA_Review.docx,42565,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+Kritva_K_EL01_Technical_QA_Review.pdf,107753,Report / presentation / documentation,Cross-file technical review and unresolved issues.
+Kritva_Original_Assignment_Brief.pdf,34662,Report / presentation / documentation,Original source brief (3 pages); retained for traceability.
+make_artwork.py,15696,CAD / artwork / source,Included release file; see README.md and/or the file itself.
+make_assembly_drawing.py,11216,CAD / artwork / source,Included release file; see README.md and/or the file itself.
+QA_Audit_Report.md,4398,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+README.md,8075,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+Risk_Register.csv,3895,Engineering data,Included release file; see README.md and/or the file itself.
+SHA256SUMS.txt,5197,Report / presentation / documentation,SHA-256 manifest for all release files other than this manifest itself.
+Simulation_and_Test_Plan.csv,6571,Engineering data,Included release file; see README.md and/or the file itself.
+Simulation_and_Verification_Plan.md,3132,Report / presentation / documentation,Included release file; see README.md and/or the file itself.
+Submission_Checklist.md,5239,Report / presentation / documentation,Final pre-submission checklist mapped to the original source brief.
+Supplier_Clarifications.csv,3697,Engineering data,Included release file; see README.md and/or the file itself.

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 1680 1188">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbfdff"/><stop offset="1" stop-color="#edf3f7"/></linearGradient>
+ <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dce5eb"/><stop offset="0.5" stop-color="#afbec9"/><stop offset="1" stop-color="#718493"/></linearGradient>
+ <linearGradient id="dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#445b6d"/><stop offset="1" stop-color="#233747"/></linearGradient>
+ <linearGradient id="teal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#56c1c8"/><stop offset="1" stop-color="#137e93"/></linearGradient>
+ <marker id="arr" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0c7690"/></marker>
+ <marker id="dim" markerWidth="8" markerHeight="8" refX="3.5" refY="3" orient="auto-start-reverse"><path d="M0,0 L6,3 L0,6 Z" fill="#526775"/></marker>
+ <style>.title{font:700 38px Arial;fill:#20384a}.sub{font:16px Arial;fill:#526775}.sect{font:700 22px Arial;fill:#20384a}.label{font:600 15px Arial;fill:#243b4a}.small{font:14px Arial;fill:#435a68}.tiny{font:12px Arial;fill:#536a78}.leader{fill:none;stroke:#647b8a;stroke-width:1.5}.line{stroke:#20384a;stroke-width:2;fill:none}.path{stroke:#0c7690;stroke-width:4;fill:none;marker-end:url(#arr)}.dim{fill:none;stroke:#526775;stroke-width:2;marker-start:url(#dim);marker-end:url(#dim)}.box{fill:#fff;stroke:#ccd9e2;stroke-width:2}.n{font:700 24px Arial;fill:#fff;text-anchor:middle;dominant-baseline:central}</style>
+</defs>
+<rect width="1680" height="1188" fill="url(#bg)"/><rect x="18" y="18" width="1644" height="1152" rx="18" fill="none" stroke="#b9cbd7" stroke-width="2"/>
+<text x="48" y="64" class="title">K-EL/01 | Concept Assembly Drawing</text><text x="50" y="94" class="sub">KR-MECH-INT-001 • Exploded actuator envelope, numbered items, load-path and support geometry • mm unless noted • Not for manufacture</text>
+<rect x="38" y="120" width="1604" height="610" rx="16" class="box"/><text x="62" y="158" class="sect">A. Exploded drive and output support — schematic, not to scale</text>
+<!-- exploded objects along central axis -->
+<line x1="95" y1="420" x2="1575" y2="420" stroke="#a5b8c5" stroke-width="2" stroke-dasharray="10 8"/>
+<!-- Encoder -->
+<rect x="100" y="348" width="80" height="144" rx="12" fill="url(#teal)" stroke="#234353" stroke-width="3"/><circle cx="140" cy="420" r="25" fill="#edf6f8" stroke="#234353" stroke-width="3"/>
+<!-- motor -->
+<ellipse cx="237" cy="420" rx="30" ry="112" fill="#617888" stroke="#233747" stroke-width="3"/><rect x="237" y="308" width="210" height="224" fill="url(#dark)" stroke="#233747" stroke-width="3"/><ellipse cx="447" cy="420" rx="30" ry="112" fill="#233747" stroke="#233747" stroke-width="3"/><line x1="275" y1="330" x2="408" y2="330" stroke="#b9ccd6" stroke-width="5"/><line x1="275" y1="510" x2="408" y2="510" stroke="#b9ccd6" stroke-width="5"/>
+<!-- gearhead -->
+<ellipse cx="496" cy="420" rx="24" ry="92" fill="#dbe4ea" stroke="#526775" stroke-width="3"/><rect x="496" y="328" width="215" height="184" fill="url(#metal)" stroke="#526775" stroke-width="3"/><ellipse cx="711" cy="420" rx="24" ry="92" fill="#718493" stroke="#526775" stroke-width="3"/>
+<!-- flex coupling separated two hubs/spider -->
+<rect x="755" y="384" width="40" height="72" rx="6" fill="#8298a6" stroke="#435b6a" stroke-width="3"/><rect x="795" y="373" width="100" height="94" rx="18" fill="url(#teal)" stroke="#234353" stroke-width="3"/><rect x="895" y="384" width="40" height="72" rx="6" fill="#8298a6" stroke="#435b6a" stroke-width="3"/>
+<!-- spindle -->
+<rect x="936" y="405" width="155" height="30" rx="3" fill="url(#metal)" stroke="#435b6a" stroke-width="2"/><line x1="950" y1="420" x2="1082" y2="420" stroke="#f4f7f9" stroke-width="4"/>
+<!-- carrier block and bearings -->
+<rect x="1068" y="300" width="240" height="240" rx="6" fill="url(#dark)" stroke="#233747" stroke-width="3"/>
+<rect x="1100" y="332" width="177" height="176" fill="#e6eef3" stroke="#526775" stroke-width="3"/>
+<g fill="#7c8f9c" stroke="#435b6a" stroke-width="3"><circle cx="1146" cy="420" r="60"/><circle cx="1146" cy="420" r="39" fill="#d9e2e8"/><circle cx="1146" cy="420" r="19" fill="#8298a6"/><circle cx="1236" cy="420" r="60"/><circle cx="1236" cy="420" r="39" fill="#d9e2e8"/><circle cx="1236" cy="420" r="19" fill="#8298a6"/></g>
+<!-- output flange and root plate -->
+<rect x="1332" y="345" width="36" height="150" rx="5" fill="url(#teal)" stroke="#234353" stroke-width="3"/><rect x="1372" y="350" width="46" height="140" rx="3" fill="url(#dark)" stroke="#233747" stroke-width="3"/>
+<rect x="1435" y="328" width="160" height="184" fill="#d6e0e7" stroke="#526775" stroke-width="3"/><rect x="1470" y="368" width="120" height="104" fill="#e8eff3" stroke="#526775" stroke-width="2"/>
+<!-- torque arrows -->
+<path d="M185 568 L415 568" class="path"/><path d="M465 568 L694 568" class="path"/><path d="M725 568 L927 568" class="path"/><path d="M956 568 L1060 568" class="path"/><path d="M1318 568 L1418 568" class="path"/>
+<text x="612" y="603" text-anchor="middle" class="label">TORQUE PATH → motor → planetary reducer → flexible coupling → independent spindle → flange/root plate → forearm</text>
+<!-- numbered balloons and leaders -->
+<g><circle cx="140" cy="260" r="22" fill="#0e7490"/><text x="140" y="260" class="n">1</text><path d="M140 282 L140 345" class="leader"/><text x="103" y="230" class="label">Encoder</text></g>
+<g><circle cx="338" cy="245" r="22" fill="#0e7490"/><text x="338" y="245" class="n">2</text><path d="M338 267 L338 306" class="leader"/><text x="272" y="214" class="label">BLDC motor</text></g>
+<g><circle cx="600" cy="240" r="22" fill="#0e7490"/><text x="600" y="240" class="n">3</text><path d="M600 262 L600 326" class="leader"/><text x="520" y="208" class="label">Planetary gearhead</text></g>
+<g><circle cx="845" cy="245" r="22" fill="#0e7490"/><text x="845" y="245" class="n">4</text><path d="M845 267 L845 372" class="leader"/><text x="791" y="213" class="label">Flexible coupling</text></g>
+<g><circle cx="1015" cy="248" r="22" fill="#0e7490"/><text x="1015" y="248" class="n">5</text><path d="M1015 270 L1015 402" class="leader"/><text x="958" y="216" class="label">Independent spindle</text></g>
+<g><circle cx="1180" cy="245" r="22" fill="#0e7490"/><text x="1180" y="245" class="n">6</text><path d="M1180 267 L1180 300" class="leader"/><text x="1130" y="212" class="label">Carrier + bearings</text></g>
+<g><circle cx="1360" cy="250" r="22" fill="#0e7490"/><text x="1360" y="250" class="n">7</text><path d="M1360 272 L1360 343" class="leader"/><text x="1320" y="218" class="label">Output flange</text></g>
+<g><circle cx="1510" cy="250" r="22" fill="#0e7490"/><text x="1510" y="250" class="n">8</text><path d="M1510 272 L1510 325" class="leader"/><text x="1450" y="218" class="label">Root plate/link</text></g>
+<!-- dimensions and assumptions -->
+<line x1="1088" y1="652" x2="1286" y2="652" class="dim"/><line x1="1088" y1="630" x2="1088" y2="666" class="leader"/><line x1="1286" y1="630" x2="1286" y2="666" class="leader"/><text x="1187" y="684" text-anchor="middle" class="label">50 mm bearing-centre spacing</text>
+<line x1="1288" y1="700" x2="1402" y2="700" class="dim"/><text x="1345" y="722" text-anchor="middle" class="tiny">50 mm load-plane overhang</text>
+<text x="64" y="674" class="small">Catalogue items are envelopes, not vendor CAD. Shaft diameter = 12 mm concept; exact hub bores/keying, retaining features and fits remain open.</text>
+<!-- bottom detail panels -->
+<rect x="38" y="754" width="495" height="380" rx="16" class="box"/><text x="62" y="793" class="sect">B. Numbered item key / proposed BOM</text>
+<g class="small">
+<text x="62" y="833">1  Motor-side encoder — maxon ENX16EASY06, 512 CPT candidate</text>
+<text x="62" y="868">2  BLDC motor — maxon EC-i 52, 48 V, #579165</text>
+<text x="62" y="903">3  Planetary gearhead — maxon GP 52 C, 91:1, #223094</text>
+<text x="62" y="938">4  Coupling — KTR ROTEX GS size 19, 98 ShA candidate</text>
+<text x="62" y="973">5  Independent Ø12 mm output spindle — custom concept</text>
+<text x="62" y="1008">6  Split-yoke carrier + 2 × SKF 6201-2RSH (12×32×10 mm)</text>
+<text x="62" y="1043">7  Output flange — approximate Ø76 mm concept envelope</text>
+<text x="62" y="1078">8  Root mounting plate + illustrative forearm link</text>
+</g>
+<rect x="552" y="754" width="500" height="380" rx="16" class="box"/><text x="576" y="793" class="sect">C. Concept parameters &amp; load paths</text>
+<text x="576" y="835" class="label">Design basis from brief</text><text x="576" y="866" class="small">1.0 kg at 350 mm; 1.5 kg at 180 mm; output 45 RPM</text><text x="576" y="897" class="small">Static torque 6.0822 N·m; target 12.1644 N·m (assumed 2×)</text><text x="576" y="928" class="small">Motor speed kinematic screen = 45 × 91 = 4095 RPM</text><text x="576" y="976" class="label">Radial load path</text><text x="576" y="1007" class="small">Forearm/root plate → spindle → bearing pair → yoke → upper arm</text><text x="576" y="1040" class="label">Open question</text><text x="576" y="1071" class="small">Confirm dynamic duty, output accuracy/backlash and safe hold on power loss.</text>
+<rect x="1072" y="754" width="570" height="380" rx="16" class="box"/><text x="1096" y="793" class="sect">D. Notes, trade-offs and release status</text>
+<text x="1096" y="835" class="small">• Independent support bearings separate radial loads from reducer torque rating.</text>
+<text x="1096" y="871" class="small">• Candidate reducer has ~1° average no-load backlash: ~6.1 mm arc at 350 mm.</text>
+<text x="1096" y="907" class="small">• At assumed 40% efficiency, simplified motor-side screen ≈0.334 N·m, 143 W, 3.64 A.</text>
+<text x="1096" y="943" class="small">• Supplier to confirm loaded curve, efficiency and the 180 W versus Tω rating point.</text>
+<text x="1096" y="979" class="small">• Proposed service: removable cap; bearing retention/access remain unverified.</text>
+<text x="1096" y="1002" class="small">  Verify tool reach, cabling and service clearance in detailed CAD.</text>
+<text x="1096" y="1030" class="small">• No brake selected: externally support when de-energized.</text>
+<text x="1096" y="1074" class="label">Drawing status: CONCEPT / NOT FOR MANUFACTURE</text>
+<text x="48" y="1157" class="tiny">Source: Kritva Robotics KR-MECH-INT-001, original brief included in release package. All link lengths, carrier geometry and custom parts are illustrative. Confirm exact component configuration and detailed interfaces before any hardware design.</text>
+</svg>

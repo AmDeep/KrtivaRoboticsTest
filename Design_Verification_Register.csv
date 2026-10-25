@@ -1,0 +1,21 @@
+﻿ID,Verification item,Method / evidence,Result,Status,Caveat / next step
+V01,Source inputs,Directly transcribed from assignment brief,1.0 kg at 350 mm; 1.5 kg at 180 mm; output 45 rpm,PASS,Horizontal forearm assumption only for static gravity case.
+V02,Static torque,T=m g r,6.0822 N m,PASS,Arithmetic verified; gravity only.
+V03,Target torque,2 x static,12.1644 N m,PASS - assumption labelled,Not a certified safety/dynamic factor.
+V04,Output power and motor speed,P=T omega; n_motor=n_out x ratio,57.323 W; 4095 rpm,PASS,Loaded motor curve and real efficiency not demonstrated.
+V05,Candidate motor,Official maxon product page,48 V; 4470 rpm nominal; 0.423 N m; 4.59 A; Kt=0.0919 N m/A,CONDITIONAL,"Confirm the 180 W class vs nominal Tω≈198 W arithmetic, applicable operating point and thermal curve. Do not extrapolate the 0.321 rpm/mNm gradient as a constant slope; maxon notes EC-i iron-winding characteristics are speed-dependent."
+V06,Candidate gearhead,Official maxon product page,91:1; 30 N m continuous; 45 N m intermittent; max eff. 75%; 1 degree average no-load backlash,CONDITIONAL,"Actual drive combination order code, efficiency under target load and duty remain unconfirmed."
+V07,Encoder,Official maxon product configuration page/catalog,"ENX16EASY06: 512 CPT, three-channel differential; configurable",CONDITIONAL,Confirm exact combination and controller signal matching.
+V08,Controller,Official EPOS4 datasheet/product page,12-60 VDC; 8 A continuous / 24 A peak <10 s,CONDITIONAL,"Motor limits, thermal derating and regeneration not closed."
+V09,Coupling,Official KTR assembly instructions,ROTEX GS size 19 / 98 ShA rated spider torque 21 N m,CONDITIONAL,"Check servo service factor, torque reversals, hub configuration, fit/speed/stiffness."
+V10,Bearing support geometry,STEP coordinate review,Bearings centres Y=11 and 61 mm; 50 mm spacing; load plane Y=111 mm; overhang 50 mm,PASS - geometry basis explicit,"Idealized radial-load model only, excludes dynamic/impact/link geometry validation."
+V11,Bearing reactions,FBD for a two-support overhung point load,"49.05 N front; 24.525 N rear, opposing directions",PASS - screening only,"No L10 life, axial load, oscillation, fit or alignment check."
+V12,Shaft combined nominal stress,Unit-consistent formula with moment/torque converted N m to N mm,sigma_b=7.228 MPa; tau=35.852 MPa; VM=62.517 MPa,PASS - nominal screen only,"No keyway/shoulder notch factors, fatigue, deflection, shock or actual material certificate."
+V13,Key nominal stresses,Ft=2T/d; rectangular key force screen,Ft=2027.4 N; shear 25.34 MPa; bearing 50.69 MPa,CONDITIONAL,"Actual KTR hub/keyway, key material, engagement and tolerance are TBD."
+V14,STEP geometric validity,CadQuery re-import and per-solid validity,Re-imported STEP shape valid; 21 solids found,PASS - geometry only,"No collision, interference or manufacturing suitability is certified."
+V15,Native FreeCAD document,FreeCAD macro supplied; CAD runtime checked,No .FCStd generated in this runtime,NOT REQUIRED / TOOL-GATED,Brief permits equivalent CAD; run macro in FreeCAD if native file preferred and inspect/save.
+V16,Artwork and labelled view,Visual review against Section 5 checklist,All required callouts included in landscape vector drawing,PASS after final visual review,Readability/layout still needs re-render review after edits.
+V17,Critical-thinking Q1-Q6,Report and speaker script,All six answers included,PASS,Answers include validation actions and trade-offs.
+V18,Power-loss holding,Requirements review,No hold policy in source brief,OPEN SAFETY REQUIREMENT,Baseline is supervised concept only; externally support arm when de-energized.
+V19,Duty/thermal/dynamic validation,Gap and simulation plan,Inputs absent from source brief,OPEN BY MISSING INPUT,"Need motion/duty, acceleration, ambient, mounting, impacts and vendor curves."
+V20,Presentation and technical discussion,8-slide deck + timed talk track + Q&A,Produced in release,PASS as submission preparation,Practice presentation time; live questions cannot be prevalidated.
