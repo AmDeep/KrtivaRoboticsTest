@@ -1,7 +1,7 @@
 ﻿# K-EL/01 Split-Yoke Elbow Actuator — Comprehensive Release
 
 **Assignment:** Kritva Robotics KR-MECH-INT-001, “Robotic Actuator & Arm Mechanical Design Challenge”  
-**Package revision:** 25 October 2026  
+**Package revision:** 16 October 2026  
 **Status:** Concept submission bundle; not a manufacturing or safety release.
 
 ## Start here
